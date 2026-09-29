@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f7f3ea;
+
+    color: #24342b;
+}
+
+
+/* =====================
+   HEADER
+   ===================== */
+
+header {
+    padding: 20px 8%;
+
+    background-color: #f7f3ea;
+}
+
+
+.navbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 28px;
+}
+
+
+.nav-links {
+    display: flex;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #24342b;
+}
+
+
+.nav-links a:hover {
+    color: #c66b3d;
+}
+
+
+/* =====================
+   HERO
+   ===================== */
+
+.hero {
+    padding: 80px 8%;
+
+    background-color: #dfe8d8;
+
+    text-align: center;
+}
+
+
+.label {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h2 {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    line-height: 1.6;
+}
+
+
+/* =====================
+   ADD TRIP
+   ===================== */
+
+.add-trip {
+    padding: 60px 8%;
+}
+
+
+.add-trip h2 {
+    text-align: center;
+
+    font-size: 35px;
+
+    margin-bottom: 30px;
+}
+
+
+#tripForm {
+    max-width: 600px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+#tripForm label {
+    margin-top: 15px;
+
+    margin-bottom: 5px;
+}
+
+
+#tripForm input,
+#tripForm textarea {
+    padding: 12px;
+
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+}
+
+
+#tripForm textarea {
+    height: 120px;
+
+    resize: vertical;
+}
+
+
+#tripForm button {
+    margin-top: 25px;
+}
+
+
+/* =====================
+   BUTTON
+   ===================== */
+
+button {
+    padding: 12px 20px;
+
+    background-color: #24342b;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #c66b3d;
+}
+
+
+/* =====================
+   TRIPS
+   ===================== */
+
+.trips {
+    padding: 60px 8%;
+
+    background-color: #eee8dc;
+}
+
+
+.trips h2 {
+    text-align: center;
+
+    font-size: 35px;
+}
+
+
+#emptyMessage {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #666;
+}
+
+
+.trip-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+
+/* =====================
+   TRIP CARD
+   ===================== */
+
+.trip-card {
+    background-color: white;
+
+    width: 300px;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.trip-card h3 {
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+
+.trip-card p {
+    margin-bottom: 10px;
+
+    line-height: 1.5;
+}
+
+
+.trip-card button {
+    margin-top: 10px;
+
+    margin-right: 8px;
+}
+
+
+.delete-btn {
+    background-color: #c94c4c;
+}
+
+
+.delete-btn:hover {
+    background-color: #9e2f2f;
+}
+
+
+/* =====================
+   ABOUT
+   ===================== */
+
+.about {
+    padding: 60px 8%;
+
+    text-align: center;
+}
+
+
+.about h2 {
+    margin-bottom: 15px;
+}
+
+
+.about p {
+    line-height: 1.6;
+}
+
+
+/* =====================
+   FOOTER
+   ===================== */
+
+footer {
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #24342b;
+
+    color: white;
+}
+
+
+/* =====================
+   MOBILE
+   ===================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .nav-links {
+        gap: 15px;
+    }
+
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+
+    .trip-container {
+        flex-direction: column;
+    }
+
+
+    .trip-card {
+        width: 100%;
+    }
+
+}
