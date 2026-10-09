@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wanderlog</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Wanderlog</h1>
+    <a id="profileLink" href="#" hidden>Open public profile</a>
+  </header>
+
+  <main>
+    <!-- Public profile view (shown when the URL has ?user=name) -->
+    <section id="profileHead" class="panel" hidden>
+      <h2 id="headName"></h2>
+      <p id="headBio"></p>
+    </section>
+    <p id="notFound" class="panel" hidden>Profile not found. Check the link and try again.</p>
+
+    <!-- Journal view (your own page) -->
+    <div id="editor">
+      <section class="panel">
+        <h2>Your profile</h2>
+        <form id="profileForm" class="row">
+          <label>Name <input id="pName" required></label>
+          <label>Username <input id="pUser" required pattern="[A-Za-z0-9_-]+"></label>
+          <label class="wide">Short bio <textarea id="pBio" rows="2"></textarea></label>
+          <button type="submit">Save profile</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Add a trip</h2>
+        <form id="tripForm" class="row">
+          <label>Title <input id="title" required></label>
+          <label>Destination <input id="place" required></label>
+          <label>Date <input id="date" type="date" required></label>
+          <label>Cover photo <input id="photo" type="file" accept="image/*"></label>
+          <label class="wide">Notes <textarea id="notes" rows="3"></textarea></label>
+          <div class="wide">
+            <img id="preview" alt="Cover photo preview" hidden>
+            <p id="previewMsg" class="hint">No photo chosen yet.</p>
+          </div>
+          <button type="submit">Save trip</button>
+        </form>
+      </section>
+    </div>
+
+    <section>
+      <h2>Trips</h2>
+      <div id="tripGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <dialog id="detail">
+    <div id="detailBody"></div>
+    <button id="closeDetail">Close</button>
+  </dialog>
+
+  <script src="script2.js"></script>
+</body>
+</html>

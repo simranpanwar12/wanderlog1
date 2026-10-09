@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wanderlog: a travel journal with photos and a shareable public profile.">
+  <meta name="theme-color" content="#12302f">
+  <title>Wanderlog</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🧭</text></svg>">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <h1>Wanderlog</h1>
+    <a id="profileLink" href="#" hidden>Open public profile</a>
+  </header>
+
+  <main id="main">
+    <noscript><p class="panel">Wanderlog needs JavaScript. Please turn it on and reload.</p></noscript>
+
+    <!-- Public profile view (URL has ?user=name) -->
+    <section id="profileHead" class="panel" aria-labelledby="headName" hidden>
+      <h2 id="headName"></h2>
+      <p id="headBio"></p>
+    </section>
+    <p id="notFound" class="panel" hidden>Profile not found. Check the link and try again.</p>
+
+    <!-- Journal view -->
+    <div id="editor">
+      <section class="panel" aria-labelledby="profileTitle">
+        <h2 id="profileTitle">Your profile</h2>
+        <form id="profileForm" class="row">
+          <label>Name <input id="pName" required autocomplete="name"></label>
+          <label>Username
+            <input id="pUser" required pattern="[A-Za-z0-9_\-]+" title="Letters, numbers, - and _ only" autocomplete="username">
+          </label>
+          <label class="wide">Short bio <textarea id="pBio" rows="2"></textarea></label>
+          <button type="submit">Save profile</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="tripTitle">
+        <h2 id="tripTitle">Add a trip</h2>
+        <form id="tripForm" class="row">
+          <label>Title <input id="title" required></label>
+          <label>Destination <input id="place" required></label>
+          <label>Date <input id="date" type="date" required></label>
+          <label>Cover photo (max 2 MB) <input id="photo" type="file" accept="image/*"></label>
+          <label class="wide">Notes <textarea id="notes" rows="3"></textarea></label>
+          <div class="wide">
+            <img id="preview" alt="Preview of the chosen cover photo" hidden>
+            <p id="previewMsg" class="hint">No photo chosen yet.</p>
+          </div>
+          <button type="submit">Save trip</button>
+        </form>
+      </section>
+    </div>
+
+    <section id="tripsSection" aria-labelledby="tripsTitle">
+      <h2 id="tripsTitle">Trips</h2>
+      <div id="tripGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <dialog id="detail" aria-label="Trip details">
+    <div id="detailBody"></div>
+    <button id="closeDetail">Close</button>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script3.js"></script>
+</body>
+</html>
